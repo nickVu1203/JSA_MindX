@@ -1,11 +1,8 @@
-console.log("sign in nè");
-
 const users = JSON.parse(localStorage.getItem("users")) || [];
 
 // lắng nghe sự kiện người dùng submit form
 document.getElementById("sign-in-form").addEventListener("submit", (e) => {
   // test lắng nghe sự kiện thành công
-  console.log("submit login ne");
 
   // chặn sự kiện load trang
   e.preventDefault();
@@ -26,11 +23,9 @@ document.getElementById("sign-in-form").addEventListener("submit", (e) => {
   });
 
   if (userDB?.password === user.password) {
-    console.log("dang nhap thanh cong");
     // tạo 1 cái key vào localStorage có tên là emailLogged => email
     localStorage.setItem("emailLogged", JSON.stringify(userDB.email));
     window.location.href = "index.html";
   } else {
-    console.log("Tai khoan hoac mat khau cua ban khong dung");
   }
 });
